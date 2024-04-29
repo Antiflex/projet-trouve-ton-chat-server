@@ -1,0 +1,43 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Blanc pour la couleur de fond */
+    color: #333333; /* Couleur du texte principale */
+    margin: 0;
+}
+
+header {
+    background-color: #ffa500; /* Orange pour le header */
+    padding: 8px;
+    margin: 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 2em; /* Taille de police du titre */
+    font-family: 'Segoe Script', cursive; /* Police de titre alternative */
+    color: #ffffff; /* Couleur du texte pour le titre */
+}
+
+.main {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffa500; /* Couleur du titre de section */
+}
+
+.annonce {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px; /* Coins arrondis pour les annonces */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère pour les annonces */
+}
+
+/* Styles spécifiques pour les appareils mobiles */
+@media only screen and (min-width: 600px) {
+    /* Ajoutez des styles spécifiques aux appareils plus larges ici si nécessaire */
+}
