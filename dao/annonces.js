@@ -6,3 +6,5 @@ class annoncesDAOClass{
         return result;
     }
 }
+
+export const annoncesDAO = new annoncesDAOClass();
