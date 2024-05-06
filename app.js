@@ -14,7 +14,7 @@ app.get("/",(req, res) => {
 // routes api
 
 app.get("/api/get_annonces", (req, res) => {
-    res.status(200).send(annoncesController.getAllAnnonces())
+    res.status(200).json(annoncesController.getAllAnnonces())
 })
 
 app.all("*",(req, res) => {
