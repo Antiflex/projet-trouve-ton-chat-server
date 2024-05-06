@@ -1,4 +1,4 @@
-import db from '../database/database.js/'
+import {db} from '../database/database.js'
 
 class annoncesDAOClass{
     async getAllAnnonces(){
@@ -6,3 +6,5 @@ class annoncesDAOClass{
         return result;
     }
 }
+
+export const annoncesDAO = new annoncesDAOClass();
