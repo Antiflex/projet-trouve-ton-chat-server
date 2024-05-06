@@ -1,11 +1,11 @@
 import {annoncesDAO} from '../dao/annonces.js'
 
 class annoncesControllerClass {
-    async getAllAnnonces(){
+    async getAllAnnonces(req, res){
         console.log('getting all annonces')
-        try{
+        try {
             const result = await annoncesDAO.getAllAnnonces();
-            return result
+            res.status(200).json(result);
         }
         catch (err){
             console.log(err)
