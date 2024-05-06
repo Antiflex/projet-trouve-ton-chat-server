@@ -6,7 +6,9 @@ class annoncesControllerClass {
         console.log('getting all annonces')
         try {
             const result = await annoncesDAO.getAllAnnonces();
-            result.date_annonce = moment(result.date_annonce).fromNow()
+            for(let i=0; i < result.length; i++){
+                result[i].date_annonce = moment(result[i].date_annonce).fromNow()
+            }
             res.status(201).json(result);
         }
         catch (err){
