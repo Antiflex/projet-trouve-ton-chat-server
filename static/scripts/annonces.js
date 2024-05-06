@@ -1,15 +1,17 @@
+
 async function getAllAnnonces() {
-    let invocation = new XMLHttpRequest();
+    console.log("HEY")
     let url = "https://projet-trouve-ton-chat-server.onrender.com/api/get_annonces";
 
-    if (invocation) {
-        invocation.open("GET", url, true);
-        console
-        invocation.onreadystatechange = handler;
-        invocation.send();
-    }
+    const response = await fetch(url, {
+        method: "GET",
+        mode: 'cors',
+    })
+    console.log(("HEY2"))
+    const result = await response.json();
+    console.log(result)
+    return result
+
 }
 
-let annonces = getAllAnnonces().then(annonces => {
-    console.log(annonces)
-})
+getAllAnnonces().then(value => {console.log(value)})
