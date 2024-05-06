@@ -17,8 +17,13 @@
         <div id="app">
             <div v-for="annonce in annonces">
                 <div class="annonce">
-                    <h3>Nom du chat perdu</h3>
-                    <p>Description du chat perdu et de sa dernière localisation.</p>
+                    <h3>Chat {{annonce.type_annonce}} : {{annonce.nom}}</h3>
+                    <h4>Description :</h4>
+                    <ul>
+                        <li>Le {{annonce.date_annonce}}</li>
+                        <li>Fourrure {{annonce.couleur_fourrure}}</li>
+                        <li>Yeux {{annonce.couleur_yeux}}</li>
+                    </ul>
                 </div>
             </div>
         </div>
