@@ -2,14 +2,14 @@ const { createApp, ref } = Vue
 
 createApp({
     data() {
-        const message = "hey"
+        const annonces = []
         return {
-            message
+            annonces
         }
     },
     mounted() {
         getAllAnnonces().then(response =>{
-            this.message = response
+            this.annonces = response
         })
     }
 }).mount('#app')

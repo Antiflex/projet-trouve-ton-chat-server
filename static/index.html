@@ -14,11 +14,16 @@
 <main>
     <section class="annonces">
         <h2 class="section-title">Annonces</h2>
-        <!-- Emplacements pour les annonces -->
-        <div class="annonce">
-            <h3>Nom du chat perdu</h3>
-            <p>Description du chat perdu et de sa dernière localisation.</p>
+        <div id="app">
+            <div v-for="annonce in annonces">
+                <div class="annonce">
+                    <h3>Nom du chat perdu</h3>
+                    <p>Description du chat perdu et de sa dernière localisation.</p>
+                </div>
+            </div>
         </div>
+        <!-- Emplacements pour les annonces -->
+
         <!-- Répéter pour d'autres annonces -->
     </section>
 </main>
@@ -26,9 +31,6 @@
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
-<div id="app">
-    {{ message }}
-</div>
 
 <script src="scripts/vueApp.js"></script>
 <footer>
