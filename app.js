@@ -15,7 +15,7 @@ app.get("/",(req, res) => {
 
 app.get("/api/get_annonces", annoncesController.getAllAnnonces)
 
-app.get("/api/test", (req, res) => {express.send("tamere")})
+app.get("/api/test", (req, res) => {res.send("tamere")})
 
 app.all("*",(req, res) => {
     res.status(404).send('<h1>Error 404 : Page not found</h1>');
