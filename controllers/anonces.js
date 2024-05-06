@@ -5,7 +5,7 @@ class annoncesControllerClass {
         console.log('getting all annonces')
         try {
             const result = await annoncesDAO.getAllAnnonces();
-            res.status(200).json(result);
+            res.status(201).json(result);
         }
         catch (err){
             console.log(err)
