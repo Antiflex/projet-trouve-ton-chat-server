@@ -1,5 +1,6 @@
 import {annoncesDAO} from '../dao/annonces.js'
 import moment from 'moment';
+moment.locale('fr');
 
 class annoncesControllerClass {
     async getAllAnnonces(req, res){

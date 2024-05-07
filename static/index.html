@@ -12,17 +12,27 @@
     <h1 class="title">Trouve Ton Chat</h1>
 </header>
 <main>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
+    <div id="map" style="height: 95vh;"></div>
     <section class="annonces">
         <h2 class="section-title">Annonces</h2>
         <div id="app">
-            <div v-for="annonce in annonces">
+            <div v-for="annonce in annonces" v-bind:id="'annonce ' + annonce.id_annonce">
                 <div class="annonce">
                     <h3>Chat {{annonce.type_annonce}} : {{annonce.nom}}</h3>
                     <h4>Description :</h4>
                     <ul>
-                        <li>Le {{annonce.date_annonce}}</li>
-                        <li>Fourrure {{annonce.couleur_fourrure}}</li>
-                        <li>Yeux {{annonce.couleur_yeux}}</li>
+                        <li>{{annonce.date_annonce}}</li>
+                        <li>Fourrure de couleur {{annonce.couleur_fourrure}}</li>
+                        <li>Yeux de couleur {{annonce.couleur_yeux}}</li>
+                        <li>De race {{annonce.race}}</li>
+                        <li>Autre : {{annonce.annotations}}</li>
                     </ul>
                 </div>
             </div>
