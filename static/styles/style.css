@@ -8,9 +8,18 @@ body {
 
 header {
     background-color: #ffa500; /* Orange pour le header */
+    width: auto;
+    height: auto;
     padding: 8px;
     margin: 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 8;
+}
+#map{
+    height: 55vh;
+    z-index: 6;
 }
 
 .title {
@@ -36,6 +45,11 @@ header {
     border-radius: 5px; /* Coins arrondis pour les annonces */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère pour les annonces */
 }
+
+.annonce_container {
+    margin: 15px;
+}
+
 
 /* Styles spécifiques pour les appareils mobiles */
 @media only screen and (min-width: 600px) {
