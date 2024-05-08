@@ -1,9 +1,9 @@
-var map = new maptalks.Map('map', {
-    center: [-0.113049,51.498568],
-    zoom: 14,
-    baseLayer: new maptalks.TileLayer('base', {
-        urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-        subdomains: ["a","b","c","d"],
-        attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
-    })
-});
+let myMap = L.map("map").setView([37.61, -122.011], 10);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    // Attribution is obligatory as per copyright!
+    maxZoom: 20
+}).addTo(myMap);
+
+myMap.addControl(new L.Control.Fullscreen());
