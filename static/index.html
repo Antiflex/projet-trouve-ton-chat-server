@@ -19,7 +19,7 @@
 <section>
     <div id='annonce_form_div' style="display: none">
         <button id="x-form-button" onclick="hideAnnonceForm()">x</button>
-        <form id='annonce_form' action='javascript:sendAnnonce()' >
+        <form id='annonce_form' onsubmit='sendAnnonce();' >
             <label for="type_annonce">Type d'annonce:</label>
             <select id="type_annonce" name="type_annonce" required>
                 <option value="Perdu">Chat perdu</option>
