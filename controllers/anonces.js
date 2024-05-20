@@ -31,6 +31,7 @@ class annoncesControllerClass {
 
     async createAnnonceAndChat(req, res){
         console.log('creating annonce and chat')
+        console.log(req.body)
         try{
             const chat = await chatsDAO.createChat(req.body.nom, req.body.race, req.body.couleurFourrure, req.body.couleurYeux)
             req.body.idChat = chat.id_chat

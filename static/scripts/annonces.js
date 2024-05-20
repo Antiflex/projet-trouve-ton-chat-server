@@ -58,7 +58,7 @@ async function LoadAnnonces() {
 
 async function sendAnnonce(){
     let form = document.getElementById("annonce_form")
-    let body = {
+    const body = {
         typeAnnonce: form.type_annonce.value,
         emplacementLat: popup._latlng.lat,
         emplacementLong: popup._latlng.lng,
@@ -69,9 +69,13 @@ async function sendAnnonce(){
         couleurYeux: form.couleur_yeux.value
     }
 
-    let url = "https://projet-trouve-ton-chat-server.onrender.com/api/create_annonce_and_chat";
+    let url = "http://localhost:3000/api/create_annonce_and_chat";
 
     const response = await fetch(url, {
+        mode: "cors",
+        headers: {
+            "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify(body)
     })
