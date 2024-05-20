@@ -8,3 +8,5 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 
 myMap.addControl(new L.Control.Fullscreen());
 let markerGroup = L.layerGroup().addTo(myMap);
+
+var popup = L.popup();

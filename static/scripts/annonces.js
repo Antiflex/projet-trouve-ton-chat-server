@@ -31,7 +31,7 @@ async function LoadAnnonces() {
             </div>`
         innerHTML += annonceInnerHML
 
-        let marker = L.marker([annonce.emplacement_lat, annonce.emplacment_long]).addTo(markerGroup);;
+        let marker = L.marker([annonce.emplacement_lat, annonce.emplacement_long]).addTo(markerGroup);
         marker.bindPopup(annonceInnerHML);
 
         let markerClass
@@ -55,4 +55,55 @@ async function LoadAnnonces() {
     app.innerHTML = innerHTML
 }
 
+
+async function sendAnnonce(){
+    let form = document.getElementById("annonce_form")
+    let body = {
+        typeAnnonce: form.type_annonce.value,
+        emplacementLat: popup._latlng.lat,
+        emplacementLong: popup._latlng.lng,
+        annotations: form.annotations.value,
+        nom: form.nom_chat.value,
+        race: form.race.value,
+        couleurFourrure: form.couleur_fourrure.value,
+        couleurYeux: form.couleur_yeux.value
+    }
+
+    let url = "https://projet-trouve-ton-chat-server.onrender.com/api/create_annonce_and_chat";
+
+    const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(body)
+    })
+    const result = await response.json().then(console.log);
+    return result
+
+}
+
+function onMapClick(e) {
+    hideAnnonceForm()
+    const popupContent =
+        `<button type="button" onClick='showAnnonceForm()'>
+            <img src="img/plus.png" height=20>
+            <p style="margin: 2px; color: #f8f9fa">Annonce</p>
+        </button>`;
+
+    popup
+        .setLatLng(e.latlng)
+        .setContent(popupContent)
+        .openOn(myMap);
+    popup._contentNode.style.margin = "1px";
+}
+
+
+function hideAnnonceForm(){
+    document.getElementById("annonce_form_div").style.display = "none";
+}
+
+function showAnnonceForm(){
+    document.getElementById("annonce_form_div").style.display = "block";
+}
+
+
+myMap.on('click', onMapClick);
 

@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 const port = process.env.PORT || 3000;
 import {annoncesController} from "./controllers/anonces.js";
+import {chatsController} from "./controllers/chat.js";
 
 const app = express();
 app.use(express.json());
@@ -20,10 +21,20 @@ app.get("/",(req, res) => {
 });
 
 // routes api
-
+// annonces
 app.get("/api/get_annonces", annoncesController.getAllAnnonces)
 
-app.get("/api/test", (req, res) => {res.json({message: 'tamere'})})
+app.post("/api/create_annonce", annoncesController.createAnnonce)
+
+app.post("/api/create_annonce_and_chat", annoncesController.createAnnonceAndChat)
+
+
+// chats
+app.get("/api/get_chats", chatsController.getAllChats)
+
+app.post("/api/create_chat", chatsController.createChat)
+
+app.get("/api/test", (req, res) => {res.json({message: 'test'})})
 
 
 app.all('*',function(req,res,next)

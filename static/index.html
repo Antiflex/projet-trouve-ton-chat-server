@@ -15,6 +15,38 @@
 <header>
     <h1 class="title">Trouve Ton Chat</h1>
 </header>
+
+<section>
+    <div id='annonce_form_div' style="display: none">
+        <button id="x-form-button" onclick="hideAnnonceForm()">x</button>
+        <form id='annonce_form' action='javascript:sendAnnonce()' >
+            <label for="type_annonce">Type d'annonce:</label>
+            <select id="type_annonce" name="type_annonce" required>
+                <option value="Perdu">Chat perdu</option>
+                <option value="Vu">Chat aperçu</option>
+                <option value="Trouvé">Chat trouvé</option>
+            </select>
+
+            <label for="nom_chat">Nom du chat:</label>
+            <input type="text" id="nom_chat" name="nom_chat" required/>
+
+            <label for="race">Race:</label>
+            <input type="text" id="race" name="race" />
+
+            <label for="couleur_fourrure">Couleur(s) de la fourrure:</label>
+            <input type="text" id="couleur_fourrure" name="couleur_fourrure" required/>
+
+            <label for="couleur_yeux">Couleur(s) des yeux:</label>
+            <input type="text" id="couleur_yeux" name="couleur_yeux"/>
+
+            <label for="annotations">Annotations:</label>
+            <textarea id="annotations" name="annotations"></textarea>
+
+            <button type="submit" id="submit-annonce-form-button">Envoyer</button>
+        </form>
+    </div>
+</section>
+
 <main>
     <div id="map"></div>
     <div class="annonce_container">
@@ -23,9 +55,6 @@
                 <h2 class="section-title">Annonces</h2>
                 <button type="button" onclick="LoadAnnonces()">
                     <img src="img/refresh.png" height=20>
-                </button>
-                <button type="button" onclick="console.log('plus')">
-                    <img src="img/plus.png" height=20>
                 </button>
             </div>
             <div id="annonces-container">
@@ -37,18 +66,17 @@
 
 <!-- scripts -->
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-            crossorigin=""></script>
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <script src="
-    https://cdn.jsdelivr.net/npm/vue-loading-spinner@1.0.11/dist/vue-loading-spinner.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/vue-loading-spinner@1.0.11/dist/vue-loading-spinner.min.css" rel="stylesheet">
-    <script src="scripts/map.js"></script>
-    <script src="scripts/annonces.js"></script>
-    <script src="scripts/vueApp.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="
+   https://cdn.jsdelivr.net/npm/vue-loading-spinner@1.0.11/dist/vue-loading-spinner.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/vue-loading-spinner@1.0.11/dist/vue-loading-spinner.min.css" rel="stylesheet">
+<script src="scripts/map.js"></script>
+<script src="scripts/annonces.js"></script>
+<script src="scripts/vueApp.js"></script>
 
 <!-- end of scripts -->
 
