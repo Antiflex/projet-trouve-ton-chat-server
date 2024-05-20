@@ -8,8 +8,6 @@ createApp({
         }
     },
     mounted() {
-        getAllAnnonces().then(response =>{
-            this.annonces = response
-        })
+        LoadAnnonces()
     }
 }).mount('#app')

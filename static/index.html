@@ -5,50 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trouve Ton Chat</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 </head>
 <body>
-<script src="scripts/annonces.js"></script>
+
 <header>
     <h1 class="title">Trouve Ton Chat</h1>
 </header>
 <main>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-          crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-            crossorigin=""></script>
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-
-
     <div id="map"></div>
-
     <div class="annonce_container">
         <section class="annonces">
-            <h2 class="section-title">Annonces</h2>
-            <div id="app">
-                <div v-for="annonce in annonces" v-bind:id="'annonce ' + annonce.id_annonce">
-                    <div class="annonce">
-                        <h3>Chat {{annonce.type_annonce}} : {{annonce.nom}}</h3>
-                        <h4>Description :</h4>
-                        <ul>
-                            <li>{{annonce.date_annonce}}</li>
-                            <li>Fourrure de couleur {{annonce.couleur_fourrure}}</li>
-                            <li>Yeux de couleur {{annonce.couleur_yeux}}</li>
-                            <li>De race {{annonce.race}}</li>
-                            <li>Autre : {{annonce.annotations}}</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="top-annonces">
+                <h2 class="section-title">Annonces</h2>
+                <button type="button" onclick="LoadAnnonces()">
+                    <img src="img/refresh.png" height=20>
+                </button>
+                <button type="button" onclick="console.log('plus')">
+                    <img src="img/plus.png" height=20>
+                </button>
+            </div>
+            <div id="annonces-container">
+                <div id="app"></div>
             </div>
         </section>
     </div>
 </main>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-<script src="scripts/vueApp.js"></script>
-<script src="scripts/map.js"></script>
+<!-- scripts -->
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/vue-loading-spinner@1.0.11/dist/vue-loading-spinner.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vue-loading-spinner@1.0.11/dist/vue-loading-spinner.min.css" rel="stylesheet">
+    <script src="scripts/map.js"></script>
+    <script src="scripts/annonces.js"></script>
+    <script src="scripts/vueApp.js"></script>
+
+<!-- end of scripts -->
+
 <footer>
     <!-- Pied de page -->
 </footer>

@@ -46,8 +46,47 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère pour les annonces */
 }
 
+.top-annonces {
+    display: flex;
+}
+
+.top-annonces > * {
+    margin: 8px;
+}
+
 .annonce_container {
     margin: 15px;
+}
+
+
+button{
+    aspect-ratio: 1/1;
+    width: 26px;
+    height: 26px;
+    background-color: #ffa500;
+    border: 2px solid #cc890f;
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.marker-lost{
+    filter: hue-rotate(155deg)
+}
+
+.marker-found{
+    filter: hue-rotate(290deg)
+}
+
+.marker-seen{
+    filter: hue-rotate(217deg) brightness(1.3)
+}
+
+button:hover {
+    background-color: #cc890f;
 }
 
 
