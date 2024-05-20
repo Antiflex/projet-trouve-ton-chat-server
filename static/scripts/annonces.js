@@ -69,7 +69,7 @@ async function sendAnnonce(){
         couleurYeux: form.couleur_yeux.value
     }
 
-    let url = "http://localhost:3000/api/create_annonce_and_chat";
+    let url = "https://projet-trouve-ton-chat-server.onrender.com/api/create_annonce_and_chat";
 
     const response = await fetch(url, {
         mode: "cors",
