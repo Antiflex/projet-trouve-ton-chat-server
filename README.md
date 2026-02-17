@@ -40,6 +40,7 @@ Pour faire tourner le projet sur votre machine :
     * Créez un fichier `.env` à la racine du projet.
     * Ajoutez votre URL de connexion PostgreSQL :
         `DATABASE_URL=postgresql://user:password@host:port/dbname`
+   * IMPORTANT : la démo en ligne utilise la database crée sur render et est privée, vous trouverez dans `/database/schema` le script à run (sans les 2 premières lignes) pour créer le schéma de la base de donnée sur votre serveur.
 
 4.  **Lancer l'application :**
     ```bash
